@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1889044090309677951}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ParticleEngines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,7 +50,7 @@ GameObject:
   - component: {fileID: 1889044090309691211}
   - component: {fileID: 1889044090291332931}
   - component: {fileID: 1889044090289649583}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ParticleEngines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4813,7 +4813,7 @@ GameObject:
   - component: {fileID: 1889044090309582385}
   - component: {fileID: 1889044090291236251}
   - component: {fileID: 1889044090289541063}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ParticleEngines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9576,7 +9576,7 @@ GameObject:
   - component: {fileID: 1889044090306169309}
   - component: {fileID: 1889044090307700595}
   - component: {fileID: 1889044090303214963}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ship_1_Mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9673,7 +9673,7 @@ GameObject:
   - component: {fileID: 1889044090309604495}
   - component: {fileID: 1447037812867062343}
   - component: {fileID: 1985350641580832838}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9735,7 +9735,7 @@ GameObject:
   - component: {fileID: 1889044090309641223}
   - component: {fileID: 1889044090291325123}
   - component: {fileID: 1889044090289543187}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ParticleEngines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14497,7 +14497,7 @@ GameObject:
   - component: {fileID: 1889044090309629923}
   - component: {fileID: 1889044090291301579}
   - component: {fileID: 1889044090289539011}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ParticleEngines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19259,7 +19259,7 @@ GameObject:
   - component: {fileID: 1889044090309689233}
   - component: {fileID: 1889044090291338735}
   - component: {fileID: 1889044090289645377}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ParticleEngines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24021,7 +24021,7 @@ GameObject:
   - component: {fileID: 1889044090309654347}
   - component: {fileID: 1889044090291229477}
   - component: {fileID: 1889044090289595891}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ParticleEngines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28783,7 +28783,7 @@ GameObject:
   - component: {fileID: 1889044090309653173}
   - component: {fileID: 1889044090291249557}
   - component: {fileID: 1889044090289537073}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ParticleEngines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33545,7 +33545,7 @@ GameObject:
   - component: {fileID: 1889044090309691967}
   - component: {fileID: 1889044090306167025}
   - component: {fileID: 1889044090307277813}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ship_1_Engines 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33626,7 +33626,7 @@ GameObject:
   - component: {fileID: 1889044090309592941}
   - component: {fileID: 1889044090291251227}
   - component: {fileID: 1889044090289637839}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ParticleEngines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38388,7 +38388,7 @@ GameObject:
   - component: {fileID: 1889044090309681105}
   - component: {fileID: 1889044090291343223}
   - component: {fileID: 1889044090289598893}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ParticleEngines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43148,7 +43148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5651373558070763341}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
