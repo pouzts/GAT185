@@ -6,11 +6,6 @@ public class SpacePlayer : MonoBehaviour, IDestructable
 {
     [Range(0, 200)] [Tooltip("Speed of the player")] public float speed = 5;
 
-    public void Destroyed()
-    {
-        GameManager.Instance.OnStopGame();
-    }
-
     void Update()
     {
         Vector3 direction = Vector3.zero;
@@ -26,5 +21,12 @@ public class SpacePlayer : MonoBehaviour, IDestructable
             GetComponent<SpaceWeapon>().Fire();
         }
 
+        GameManager.Instance.playerHealth = GetComponent<Health>().health;
+    }
+
+    public void Destroyed()
+    {
+        GameManager.Instance.playerHealth = 0;
+        GameManager.Instance.OnPlayerDead();
     }
 }

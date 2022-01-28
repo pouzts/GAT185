@@ -14341,7 +14341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 4029193337003449088}
   minFireTime: 1
-  maxFireTime: 10
+  maxFireTime: 5
   points: 200
 --- !u!114 &4029193337003449088
 MonoBehaviour:
@@ -14356,7 +14356,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 7483908734786987512, guid: 63740cc5650c3094eb8112cb9dd9d36d, type: 3}
-  spawnTransform: {fileID: 7368946485312074767}
+  spawnTransform:
+  - {fileID: 7368946485312074767}
   fireRate: 9
 --- !u!114 &7196041745050117755
 MonoBehaviour:
@@ -14412,7 +14413,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 1, z: 20}
+  m_Size: {x: 20, y: 5, z: 20}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3773739132975064504
 GameObject:
