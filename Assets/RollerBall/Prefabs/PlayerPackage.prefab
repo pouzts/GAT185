@@ -181,8 +181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08b313e4204eac1468e1987b9f662144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForce: 5
-  jumpForce: 5
+  maxForce: 7
+  jumpForce: 7
   forceMode: 0
   viewTransform: {fileID: 8698779009034504117}
 --- !u!114 &5070687883138941566

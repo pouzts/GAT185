@@ -15,6 +15,8 @@ public class RollerGameManager : Singleton<RollerGameManager>
         PLAYER_START,
         GAME,
         PLAYER_DEAD,
+        GAME_WIN,
+        TIME_OVER,
         GAME_OVER
     }
 
@@ -23,6 +25,8 @@ public class RollerGameManager : Singleton<RollerGameManager>
     [SerializeField] GameObject mainCamera;
 
     [SerializeField] GameObject titleScreen;
+    [SerializeField] GameObject timeOverScreen;
+    [SerializeField] GameObject winScreen;
     [SerializeField] GameObject gameOverScreen;
     [SerializeField] TMP_Text scoreUI;
     [SerializeField] TMP_Text livesUI;
@@ -92,15 +96,19 @@ public class RollerGameManager : Singleton<RollerGameManager>
                 if (gameTime <= 0)
                 {
                     GameTime = 0;
-                    state = State.GAME_OVER;
+                    state = State.TIME_OVER;
                     stateTimer = 5;
                 }
                 break;
             case State.PLAYER_DEAD:
                 if (stateTimer <= 0)
                 {
+                    timeOverScreen.SetActive(false);
                     state = State.PLAYER_START;
                 }
+                break;
+            case State.TIME_OVER:
+                OnTimeOver();
                 break;
             case State.GAME_OVER:
                 if (stateTimer <= 0)
@@ -126,8 +134,8 @@ public class RollerGameManager : Singleton<RollerGameManager>
     }
 
     public void OnStopGame()
-    { 
-    
+    {
+        
     }
 
     public void OnStartTitle()
@@ -155,6 +163,18 @@ public class RollerGameManager : Singleton<RollerGameManager>
             stateTimer = 3;
         }
         stopGameEvent?.Invoke();
+    }
+
+    public void OnTimeOver()
+    {
+        timeOverScreen.SetActive(true);
+
+        var players = FindObjectsOfType<RollerPlayer>();
+        foreach (var player in players)
+        {
+            player.Destroyed();
+            Destroy(player.gameObject);
+        }
     }
 
     private void DestroyAllEnemies()
