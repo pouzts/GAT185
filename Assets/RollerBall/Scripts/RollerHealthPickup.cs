@@ -10,6 +10,8 @@ public class RollerHealthPickup : RollerPickup, IDestructable
     {
         GameObject go = GameObject.FindGameObjectWithTag("Player");
         go.GetComponent<Health>().health += this.health;
+
+        RollerGameManager.Instance.Score += points;
     }
 
 }

@@ -7,6 +7,7 @@ public class RollerPickup : MonoBehaviour
     public float amplitude;
     public float rate;
     public float spinRate;
+    public int points;
 
     Vector3 initialPosition;
     float time;

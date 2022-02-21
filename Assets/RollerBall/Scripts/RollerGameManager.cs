@@ -3,9 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
-
- 
 
 public class RollerGameManager : Singleton<RollerGameManager>
 {
@@ -64,6 +63,11 @@ public class RollerGameManager : Singleton<RollerGameManager>
         } 
     }
 
+    /*public int Counter
+    {
+        get; set;
+    }*/
+
     public float GameTime
     {
         get { return this.gameTime; }
@@ -72,6 +76,11 @@ public class RollerGameManager : Singleton<RollerGameManager>
             this.gameTime = value;
             timeUI.text = "<mspace=mspace=36>" + gameTime.ToString("0.0") + "</mspace>";
         }
+    }
+
+    private void OnEnable()
+    {
+        
     }
 
     private void Update()
@@ -83,7 +92,7 @@ public class RollerGameManager : Singleton<RollerGameManager>
             case State.TITLE:
                 break;
             case State.PLAYER_START:
-                DestroyAllEnemies();
+                //DestroyAllEnemies();
                 Instantiate(playerPrefab, playerSpawn.position, playerSpawn.rotation);
                 mainCamera.SetActive(false);
                 startGameEvent?.Invoke();
@@ -98,6 +107,10 @@ public class RollerGameManager : Singleton<RollerGameManager>
                     GameTime = 0;
                     state = State.TIME_OVER;
                     stateTimer = 5;
+                }
+                if (FindObjectsOfType<RollerCoin>().Length <= 0)
+                {
+                    OnGameWin();
                 }
                 break;
             case State.PLAYER_DEAD:
@@ -118,6 +131,15 @@ public class RollerGameManager : Singleton<RollerGameManager>
                     titleScreen.SetActive(true);
                 }
                 break;
+            case State.GAME_WIN:
+                if (stateTimer <= 0)
+                {
+                    ResetGame();
+                    state = State.TITLE;
+                    winScreen.SetActive(false);
+                    titleScreen.SetActive(true);
+                }
+                break;
             default:
                 break;
         }
@@ -128,6 +150,7 @@ public class RollerGameManager : Singleton<RollerGameManager>
         state = State.PLAYER_START;
         Score = 0;
         Lives = 3;
+        //Counter = 0;
         gameTime = 0;
 
         titleScreen.SetActive(false);
@@ -143,6 +166,17 @@ public class RollerGameManager : Singleton<RollerGameManager>
         state = State.TITLE;
         titleScreen.SetActive(true);
         stopGameEvent?.Invoke();
+    }
+
+    public void OnTimeOver()
+    {
+        timeOverScreen.SetActive(true);
+
+        var players = FindObjectsOfType<RollerPlayer>();
+        foreach (var player in players)
+        {
+            Destroy(player.gameObject);
+        }
     }
 
     public void OnPlayerDead()
@@ -165,16 +199,19 @@ public class RollerGameManager : Singleton<RollerGameManager>
         stopGameEvent?.Invoke();
     }
 
-    public void OnTimeOver()
+    public void ResetGame()
     {
-        timeOverScreen.SetActive(true);
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+        state = State.TITLE;
+    }
 
-        var players = FindObjectsOfType<RollerPlayer>();
-        foreach (var player in players)
-        {
-            player.Destroyed();
-            Destroy(player.gameObject);
-        }
+    public void OnGameWin()
+    {
+        state = State.GAME_WIN;
+        winScreen.SetActive(true);
+        stopGameEvent?.Invoke();
+        stateTimer = 5;
     }
 
     private void DestroyAllEnemies()

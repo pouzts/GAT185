@@ -27,10 +27,10 @@ public class RollerPlayer : MonoBehaviour, IDestructable
 
         // convert world space direction to camera space
         Quaternion viewSpace = Quaternion.AngleAxis(viewTransform.transform.eulerAngles.y, Vector3.up);
-        force = viewSpace * direction;
+        force = viewSpace * direction * maxForce;
         
         // world space
-        force = direction * maxForce;
+        //force = direction * maxForce;
 
         if (Input.GetButtonDown("Jump"))
         {

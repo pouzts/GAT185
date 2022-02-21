@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class RollerCoin : RollerPickup, IDestructable
 {
-    [SerializeField] int points;
-
     public void Destroyed()
     {
         RollerGameManager.Instance.Score += points;
+        //RollerGameManager.Instance.Counter += 1;
     }
 }

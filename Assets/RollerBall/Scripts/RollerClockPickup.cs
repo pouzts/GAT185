@@ -9,6 +9,7 @@ public class RollerClockPickup : RollerPickup, IDestructable
     public void Destroyed()
     {
         RollerGameManager.Instance.GameTime += addedTime;
+        RollerGameManager.Instance.Score += points;
     }
 
 }
